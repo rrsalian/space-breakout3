@@ -22,9 +22,31 @@
 
     </style>
 </head>
-<body style="background-image: url('./jeremy-thomas-E0AHdsENmDg-unsplash.jpg');">
+<body id='spaceBody' style="background-image: url('./jeremy-thomas-E0AHdsENmDg-unsplash.jpg');">
 
-    <div class="shape"></div>
-    
+    <div id="conatiner">
+        <div class="shape"></div>
+    </div>
+    <script>
+        const body = document.getElementById('spaceBody');
+        body.addEventListener('keydown', (event) =>{
+            const direction = event.keyCode
+            switch (direction) {
+                case 40: 
+                    console.log("down")
+                    break;
+                case 39: 
+                    console.log("right")
+                    break;
+                case 37:
+                    console.log("left")
+                    break;
+                case 38:
+                    console.log("up")
+                    break;
+
+            }
+        })
+    </script>
 </body>
 </html>
