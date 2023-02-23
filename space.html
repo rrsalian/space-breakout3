@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .shape {
-            width:100px;
-            height:100px;
-            border-radius: 50%;
-            background-color: red;
-        }
 
         body {
         /* Center and scale the image nicely */
@@ -20,11 +14,53 @@
         background-size: 150%;
         }
 
+        #shape {
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        #body {
+            position:absolute;
+        }
+        
     </style>
 </head>
-<body style="background-image: url('./jeremy-thomas-E0AHdsENmDg-unsplash.jpg');">
-
-    <div class="shape"></div>
+<body id="spaceBody" style="background-image: url('./jeremy-thomas-E0AHdsENmDg-unsplash.jpg');">
+    <div id="shape"></div>
     
+    <script>
+        const myShape = document.getElementById("shape");        
+        const body = document.getElementById('spaceBody');
+        
+        myShape.style.position = "relative";
+        myShape.style.left = "0px";
+        myShape.style.top = "0px";
+
+        body.addEventListener('keydown', (event) => {            
+
+            switch(event.keyCode) {
+                case 37:
+                    console.log('left');
+                    myShape.style.left = parseInt(myShape.style.left) - 5 + "px";
+                    break;
+                case 38:
+                    console.log('up');
+                    myShape.style.top = parseInt(myShape.style.top) - 5 + "px";
+                    break;
+                case 39:
+                    console.log('right');
+                    myShape.style.left = parseInt(myShape.style.left) + 5 + "px";
+                    break;
+                case 40:
+                    console.log('down');
+                    myShape.style.top = parseInt(myShape.style.top) + 5 + "px";
+                    break;
+            }   
+        });
+
+    </script>
+
 </body>
 </html>
